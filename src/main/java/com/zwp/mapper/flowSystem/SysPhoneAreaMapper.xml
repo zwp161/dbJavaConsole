@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zwp.mapper.flowSystem.SysPhoneAreaMapper">
+
+
+    <insert id="insert">
+        insert into sys_phone_area(phone_num, province_code, cart_type, phone_type, row_update_time, row_create_time)
+        values (#{phone_num}, #{province_code}, #{cart_type}, #{phone_type}, #{row_update_time}, #{row_create_time})
+    </insert>
+    <update id="updatePhoneNum">
+        update sys_phone_area set province_code = #{province_code}, cart_type=#{cart_type}, phone_type=#{phone_type}
+        where phone_num = #{phone_num}
+    </update>
+
+    <select id="selectByName" resultType="Map">
+      select * from sys_phone_area t where t.cart_type = #{name}
+    </select>
+    <select id="selectByPhone" resultType="java.util.Map">
+        select * from sys_phone_area t where t.phone_num = #{phone}
+    </select>
+
+
+</mapper>

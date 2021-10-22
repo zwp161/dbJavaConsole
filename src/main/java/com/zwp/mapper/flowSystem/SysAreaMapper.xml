@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zwp.mapper.flowSystem.SysAreaMapper">
+
+    <select id="selectByName" resultType="Map">
+      select * from sys_area t where t.sa_name = #{name}
+    </select>
+
+
+</mapper>

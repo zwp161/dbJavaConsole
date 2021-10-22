@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="jdbc.properties" />
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driverClass}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+                <property name="poolMaximumActiveConnections" value="${jdbc.maxPoolSize}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <package name="com.zwp.mapper.flowSystem" />
+        <!--<mapper resource="mapper/SysAreaMapper.xml"/>-->
+        <!--<mapper resource="mapper/SysPhoneAreaMapper.xml"/>-->
+    </mappers>
+
+
+</configuration>
